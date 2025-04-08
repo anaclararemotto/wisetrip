@@ -1,10 +1,12 @@
-import { View, StyleSheet, Text, Pressable, Image } from "react-native";
+import { Link, useRouter } from "expo-router";
+import { View, StyleSheet, Text, Pressable, Image, Button } from "react-native";
 
-export default function HomeScreen() {
+export default function LoginScreen() {
+
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Image source={require('../assets/images/wisetrip_telainicial.png')} />
+        <Image source={require("../../assets/images/wisetrip_telainicial.png")} />
         <Text style={styles.wisetripText}>WiseTrip</Text>
       </View>
 
@@ -15,36 +17,38 @@ export default function HomeScreen() {
             Acesse sua conta e viaje sem preocupações.
           </Text>
         </View>
-        <Pressable style={styles.button}>
-          <Text style={styles.textButton}>Faça seu login</Text>
-        </Pressable>
+        
+        <Link href={"/login"} style={styles.button}>Faça seu login</Link>
       </View>
+
+
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#002952",
   },
-  content:{
-    alignItems: 'center',
-    justifyContent:  'center',
-    marginTop: '20%'
+  content: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: "30%",
   },
-  wisetripText:{
-    textAlign: 'center',
+  wisetripText: {
+    textAlign: "center",
     fontSize: 64,
-    fontWeight: 'bold',
-    color: '#fff'
+    fontWeight: "bold",
+    color: "#fff",
   },
   box: {
     position: "absolute",
-    top: "60%",
+    top: "65%",
     left: 0,
     right: 0,
-    height: "40%",
+    height: "35%",
     backgroundColor: "#fff",
     borderTopStartRadius: 32,
     borderTopEndRadius: 32,
@@ -67,10 +71,8 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     margin: 20,
     borderRadius: 8,
-  },
-  textButton: {
     textAlign: "center",
     color: "#fff",
-    fontSize: 16
+    fontSize: 16,
   },
 });
